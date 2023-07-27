@@ -1,0 +1,310 @@
+{
+  "user_encryption_table": {
+    "table_name": "userencryptiondata",
+    "columns": [
+      {
+        "name": "username",
+        "type": "VARCHAR(255)"
+      },
+      {
+        "name": "email",
+        "type": "VARCHAR(255)"
+      },
+      {
+        "name": "regid",
+        "type": "VARCHAR(255)"
+      },
+      {
+        "name": "n",
+        "type": "TEXT"
+      },
+      {
+        "name": "e",
+        "type": "TEXT"
+      },
+      {
+        "name": "d",
+        "type": "TEXT"
+      },
+      {
+        "name": "p",
+        "type": "TEXT"
+      },
+      {
+        "name": "q",
+        "type": "TEXT"
+      },
+      {
+        "name": "password",
+        "type": "VARBINARY(6500)"
+      }
+    ],
+    "key_constraints": {
+      "PRIMARY KEY": "username",
+      "FOREIGN KEY": []
+    }
+  },
+  "user_profile_table": {
+    "table_name": "userprofiledata",
+    "columns": [
+      {
+        "name": "username",
+        "type": "VARCHAR(255)"
+      },
+      {
+        "name": "uID",
+        "type": "VARCHAR(255)"
+      },
+      {
+        "name": "pic",
+        "type": "LONGBLOB"
+      },
+      {
+        "name": "fullname",
+        "type": "VARCHAR(255)"
+      },
+      {
+        "name": "phone_no",
+        "type": "VARCHAR(255)"
+      },
+      {
+        "name": "nfc_serial_no",
+        "type": "VARCHAR(255)"
+      },
+      {
+        "name": "is_email_verified",
+        "type": "VARCHAR(5)"
+      },
+      {
+        "name": "is_transaction_enabled",
+        "type": "VARCHAR(5)"
+      }
+    ],
+    "key_constraints": {
+      "PRIMARY KEY": "uID",
+      "FOREIGN KEY": [
+        {
+          "name": "username",
+          "references": ["userencryptiondata(username)"]
+        }
+      ]
+    }
+  },
+  "user_transaction_history_table": {
+    "table_name": "usertransactiondata",
+    "columns": [
+      {
+        "name": "unique_txn_id",
+        "type": "VARCHAR(255)"
+      },
+      {
+        "name": "username",
+        "type": "VARCHAR(255)"
+      },
+      {
+        "name": "mID",
+        "type": "VARCHAR(255)"
+      },
+      {
+        "name": "txn_created_datetime",
+        "type": "DATETIME"
+      },
+      {
+        "name": "txn_completed_datetime",
+        "type": "DATETIME"
+      },
+      {
+        "name": "txn_amount",
+        "type": "VARCHAR(255)"
+      },
+      {
+        "name": "txn_status",
+        "type": "VARCHAR(255)"
+      }
+    ],
+    "key_constraints": {
+      "PRIMARY KEY": "unique_txn_id",
+      "FOREIGN KEY": [
+        {
+          "name": "username",
+          "references": ["userencryptiondata(username)", "userprofiledata(username)"]
+        },
+        {
+          "name": "mID",
+          "references": ["merchantprofiledata(mID)"]
+        }
+      ]
+    }
+  },
+  "merchant_encryption_table": {
+    "table_name": "merchantencryptiondata",
+    "columns": [
+      {
+        "name": "merchantname",
+        "type": "VARCHAR(255)"
+      },
+      {
+        "name": "email",
+        "type": "VARCHAR(255)"
+      },
+      {
+        "name": "n",
+        "type": "TEXT"
+      },
+      {
+        "name": "e",
+        "type": "TEXT"
+      },
+      {
+        "name": "d",
+        "type": "TEXT"
+      },
+      {
+        "name": "p",
+        "type": "TEXT"
+      },
+      {
+        "name": "q",
+        "type": "TEXT"
+      },
+      {
+        "name": "password",
+        "type": "VARBINARY(6500)"
+      }
+    ],
+    "key_constraints": {
+      "PRIMARY KEY": "merchantname",
+      "FOREIGN KEY": []
+    }
+  },
+  "merchant_profile_table": {
+    "table_name": "merchantprofiledata",
+    "columns": [
+      {
+        "name": "merchantname",
+        "type": "VARCHAR(255)"
+      },
+      {
+        "name": "mID",
+        "type": "VARCHAR(255)"
+      },
+      {
+        "name": "pic",
+        "type": "LONGBLOB"
+      },
+      {
+        "name": "phone_no",
+        "type": "VARCHAR(255)"
+      },
+      {
+        "name": "outletname",
+        "type": "VARCHAR(255)"
+      },
+      {
+        "name": "category",
+        "type": "VARCHAR(255)"
+      },
+      {
+        "name": "is_email_verified",
+        "type": "VARCHAR(5)"
+      }
+    ],
+    "key_constraints": {
+      "PRIMARY KEY": "mID",
+      "FOREIGN KEY": [
+        {
+          "name": "merchantname",
+          "references": ["merchantencryptiondata(merchantname)"]
+        }
+      ]
+    }
+  },
+  "merchant_transaction_history_table": {
+    "table_name": "merchanttransactiondata",
+    "columns": [
+      {
+        "column_name": "unique_txn_id",
+        "column_type": "VARCHAR(255)"
+      },
+      {
+        "column_name": "merchantname",
+        "column_type": "VARCHAR(255)"
+      },
+      {
+        "column_name": "uID",
+        "column_type": "VARCHAR(255)"
+      },
+      {
+        "column_name": "txn_created_datetime",
+        "column_type": "DATETIME"
+      },
+      {
+        "column_name": "txn_completed_datetime",
+        "column_type": "DATETIME"
+      },
+      {
+        "column_name": "txn_amount",
+        "column_type": "VARCHAR(255)"
+      }
+    ],
+    "key_constraints": {
+      "PRIMARY KEY": "",
+      "FOREIGN KEY": [
+        {
+          "name": "unique_txn_id",
+          "references": ["usertransactiondata(unique_txn_id)"]
+        },
+        {
+          "name": "merchantname",
+          "references": ["merchantencryptiondata(merchantname)", "merchantprofiledata(merchantname)"]
+        },
+        {
+          "name": "uID",
+          "references": ["userprofiledata(uID)"]
+        }
+      ]
+    }
+  },
+  "user_account_table": {
+    "table_name": "useraccountdata",
+    "columns": [
+      {
+        "column_name": "account_no",
+        "column_type": "VARCHAR(255)"
+      },
+      {
+        "column_name": "available_balance",
+        "column_type": "VARCHAR(255)"
+      },
+      {
+        "column_name": "DOB",
+        "column_type": "DATE"
+      }
+    ],
+    "key_constraints": {
+      "PRIMARY KEY": "account_no",
+      "FOREIGN KEY": []
+    }
+  },
+  "mwechant_account_table": {
+    "table_name": "merchantaccountdata",
+    "columns": [
+      {
+        "column_name": "account_no",
+        "column_type": "VARCHAR(255)"
+      },
+      {
+        "column_name": "available_balance",
+        "column_type": "VARCHAR(255)"
+      },
+      {
+        "column_name": "DOB",
+        "column_type": "DATE"
+      }
+    ],
+    "key_constraints": {
+      "PRIMARY KEY": "account_no",
+      "FOREIGN KEY": []
+    }
+  }
+}

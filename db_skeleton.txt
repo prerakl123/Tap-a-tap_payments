@@ -1,0 +1,56 @@
+=> userencryptiondata
+    -> username                 VARCHAR     $PRIMARY KEY
+    -> email                    VARCHAR
+    -> regid                    VARCHAR
+    -> n                        TEXT
+    -> e                        TEXT
+    -> d                        TEXT
+    -> p                        TEXT
+    -> q                        TEXT
+    -> password                 VARBINARY
+
+=> userprofiledata
+    -> username                 VARCHAR     $FOREIGN KEY
+    -> uID                      VARCHAR     $PRIMARY KEY
+    -> pic                      LONGBLOB
+    -> fullname                 VARCHAR
+    -> phone_no                 VARCHAR
+    -> nfc_serial_no            VARCHAR
+    -> is_email_verified        VARCHAR
+    -> is_transaction_enabled   VARCHAR
+
+=> usertransactiondata
+    -> unique_txn_id            VARCHAR     $PRIMARY KEY
+    -> username                 VARCHAR     $FOREIGN KEY
+    -> mID                      VARCHAR     $FOREIGN KEY
+    -> txn_created_datetime     DATETIME
+    -> txn_completed_datetime   DATETIME
+    -> txn_amount               VARCHAR
+    -> txn_status               VARCHAR
+
+=> merchantencryptiondata
+    -> merchantname             VARCHAR     $PRIMARY KEY
+    -> email                    VARCHAR
+    -> n                        TEXT
+    -> e                        TEXT
+    -> d                        TEXT
+    -> p                        TEXT
+    -> q                        TEXT
+    -> password                 VARBINARY
+
+=> merchantprofiledata
+    -> merchantname             VARCHAR     $FOREIGN KEY
+    -> mID                      VARCHAR     $PRIMARY KEY
+    -> pic                      LARGEBLOB
+    -> phone_no                 VARCHAR
+    -> outletname               VARCHAR
+    -> category                 VARCHAR
+    -> is_email_verified        VARCHAR
+
+=> merchanttransactiondata
+    -> unique_txn_id            VARCHAR     $FOREIGN KEY
+    -> merchantname             VARCHAR     $FOREIGN KEY
+    -> uID                      VARCHAR     $FOREIGN KEY
+    -> txn_created_datetime     DATETIME
+    -> txn_completed_datetime   DATETIME
+    -> txn_amount               VARCHAR

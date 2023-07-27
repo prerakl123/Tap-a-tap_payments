@@ -1,0 +1,365 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tap-a-tap Sign-Up</title>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+    <header class="header">
+        <img src="" alt="" class="header_img">
+    </header>
+    <main class="main">
+        <div class="registration_container container grid">
+            <div class="registration_image_container">
+                <img src="{{REGISTRATION_IMG_PATH}}" alt="" class="registration_img">
+            </div>
+
+            <div class="registration_form_container container">
+                <h1 class="registration_signup_label">Sign-Up</h1>
+                <form action="" class="registration_form">
+                    <div class="registration_content">
+                        <label for="" class="registration_label">Name</label>
+                        <input type="text" class="registration_input">
+                    </div>
+                    <hr>
+                    <div class="registration_content">
+                        <label for="" class="registration_label">College Email ID</label>
+                        <input type="email" class="registration_input">
+                    </div>
+                    <hr>
+                    <div class="registration_content">
+                        <label for="" class="registration_label">Registration No.</label>
+                        <input type="text" class="registration_input">
+                    </div>
+                    <hr>
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer class="register_footer">
+        <div class="register_footer_bg">
+            <div class="register_footer_container">
+                <div style="margin-left: 5%;">
+                    <h1 class="register_footer_title">Tap-a-Tap Payments</h1>
+                    <span class="register_footer_subtitle">Payments made easy.</span>
+                </div>
+
+            </div>
+
+            <p class="footer_copyright">&#169; {{CURRENT_YEAR}}. Prerak Lodha at SRMIST</p>
+        </div>
+    </footer>
+</body>
+</html> -->
+
+
+
+
+
+<!-- static.css
+/* :root {
+    --header-height: 3rem;
+
+    --hue-color: 230;   // Purple 250 - Green 142 - Blue 230 - Pink 340
+
+    --first-color: hsl(var(--hue-color), 69%, 61%);
+    --first-color-second: hsl(var(--hue-color), 30%, 8%);
+    --first-color-alt: hsl(var(--hue-color), 57%, 53%);
+    --first-color-lighter: hsl(var(--hue-color), 92%, 85%);
+    --title-color: hsl(var(--hue-color), 8%, 95%);
+    --text-color: hsl(var(--hue-color), 8%, 75%);
+    --text-color-light: hsl(var(--hue-color), 8%, 65%);
+    --input-color: hsl(var(--hue-color), 29%, 16%);
+    --body-color: hsl(var(--hue-color), 28%, 12%);
+    --container-color: hsl(var(--hue-color), 29%, 16%);
+    --scroll-bar-color: hsl(var(--hue-color), 12%, 48%);
+    --scroll-thumb-color: hsl(var(--hue-color), 12%, 36%);
+
+    --body-font: 'Poppins', sans-serif;
+
+    --big-font-size: 2rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1.125rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+    --smaller-font-size: .75rem;
+
+    --font-medium: 500;
+    --font-semi-bold: 600;
+
+    --mb-0-25: .25rem;
+    --mb-0-5: .5rem;
+    --mb-0-75: .75rem;
+    --mb-1: 1rem;
+    --mb-1-5: 1.5rem;
+    --mb-2: 2rem;
+    --mb-2-5: 2.5rem;
+    --mb-3: 3rem;
+
+    --z-tooltip: 10;
+    --z-fixed: 100;
+    --z-modal: 1000;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  
+html {
+    scroll-behavior: smooth;
+}
+  
+body {
+    margin: 0 0 var(--header-height) 0;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    background-color: var(--body-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+}
+
+h1, h2, h3, h4 {
+    color: var(--title-color);
+    font-weight: var(--font-semi-bold);
+}
+  
+ul {
+    list-style: none;
+}
+  
+a {
+    text-decoration: none;
+}
+
+hr {
+    height: 2px;
+    width: 80%;
+    margin-bottom: 3%;
+    margin-left: 10%;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    max-width: 768px;
+    margin-left: var(--mb-1-5);
+    margin-right: var(--mb-1-5);
+}
+  
+.grid {
+    display: grid;
+    gap: 1.5rem;
+}
+  
+.header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: var(--z-fixed);
+    background-color: var(--body-color);
+}
+
+.registration_container {
+    margin-left: 0;
+    width: 100%;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.registration_image_container {
+    left: 0;
+}
+
+.registration_form_container {
+    padding: 2rem;
+    background-color: rgba(0,0,0,0.05);
+    position: absolute;
+    height: 22rem;
+    width: 30rem;
+    color: #FFF;
+    z-index: 1;
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 7.5px );
+    -webkit-backdrop-filter: blur( 7.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+
+.registration_signup_label {
+    font-size: var(--h1-font-size);
+    text-align: center;
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px 5px #5e0000, 2px 1px 4px #380000;
+}
+
+.registration_content {
+    background-color: var(--input-color);
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem 0.25rem;
+}
+
+.registration_label {
+    font-size: var(--smaller-font-size);
+    color: var(--title-color);
+    width: 100vh;
+}
+
+.registration_input {
+    width: 100%;
+    background-color: var(--input-color);
+    color: var(--text-color);
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    border: none;
+    outline: none;
+    padding: 0.25rem 0.5rem 0.5rem 0;
+}
+
+.register_footer {
+    padding-top: 2rem;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+.register_footer_container {
+    row-gap: 3.5rem;
+}
+
+.register_footer_bg {
+    background-color: var(--first-color-second);
+    padding: 2rem 0 3rem;
+}
+
+.register_footer_title {
+    font-size: var(--h1-font-size);
+    margin-bottom: var(--mb-0-25);
+}
+
+.register_footer_subtitle {
+    font-size: var(--small-font-size);
+}
+
+.register_footer_links {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+}
+
+.register_footer_link:hover {
+    color: var(--first-color-lighter);
+}
+
+.register_footer_title,
+.register_footer_subtitle,
+.register_footer_link {
+    color: #FFF;
+}
+
+.footer_copyright {
+    font-size: var(--smaller-font-size);
+    text-align: center;
+    color: var(--text-color-light);
+    margin-top: var(--mb-3);
+}
+
+
+@media screen and (max-width: 350px) {
+    .register_footer {
+        height: 40px;
+    }
+    .registration_container {
+        width: 100%;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .registration_image_container {
+        margin: auto;
+    }
+
+    .registration_img {
+        width: 300px;
+        height: fit-content;
+    }
+
+    .registration_form_container {
+        margin: auto;
+    }
+}
+
+@media screen and (max-width: 568px) {
+    .registration_container {
+        width: 100%;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .registration_footer_container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .registration_container {
+        width: 100%;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .header,
+    .main,
+    .register_footer_container {
+        padding: 0 1rem;
+    }
+
+    .register_footer_container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .register_footer_bg {
+        padding: 3rem 0 3.5rem;
+    }
+
+    .register_footer_links {
+        flex-direction: row;
+        column-gap: 2rem;
+    }
+
+    .footer_copyright {
+        margin-top: 4.5rem;
+    }
+}
+
+@media screen and (max-width: 968px) {
+    :root {
+        --big-font-size: 3rem;
+        --h1-font-size: 2.25rem;
+        --h2-font-size: 1.5rem;
+        --h3-font-size: 1.25rem;
+        --normal-font-size: 1rem;
+        --small-font-size: .875rem;
+        --smaller-font-size: .813rem;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .header,
+    .main,
+    .registration_footer_container {
+        padding: 0;
+    }
+} */ -->
+

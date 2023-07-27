@@ -66,8 +66,37 @@ document.onreadystatechange = function () {
 /* ADDING SUGGESTION TO USERNAME INPUT */
 let suggestion_boxes = document.querySelectorAll('.suggestion__text');
 let uname_inp_box = document.getElementById('r-uname');
+let random_button = document.querySelector('#random-suggestion-btn');
+const username_list = {{USERNAME_LIST | to_json}};
+var ind = 0;
+
 Array.from(suggestion_boxes).forEach(el => {
     el.addEventListener('click', () => {
         uname_inp_box.value = el.textContent;
     });
 });
+
+random_button.addEventListener('click', () => {
+    if (ind > 54)
+        ind = 0;
+    for(var i=0; i<6; i++) {
+        suggestion_boxes[i].innerHTML = username_list[ind + i];
+    }
+    ind += 6;
+})
+random_button.click();
+
+
+/* CYCLE NAVIGATION PANE */
+var nav_pane = document.getElementsByClassName('nav-pane');
+var nav_items = document.getElementsByClassName("nav-item");
+var current_pane = nav_items[0];
+for (var i = 0, len = nav_pane.length; i < len; i++) {
+    (function (index) {
+        nav_pane[i].onclick = function () {
+            current_pane.classList.add("disabled");
+            current_pane = nav_items[index];
+            current_pane.classList.remove("disabled");
+        };
+    })(i);
+}

@@ -1,0 +1,14 @@
+{
+  "host": "localhost",
+  "database": "tapatap_payments",
+  "user": "root",
+  "password": "0b10100000b11100100b11001010b11100100b11000010b11000110b11010110b10000000b1100010b1100100b110011",
+  "port": 3306,
+  "user_encryption_table": "userencryptiondata",
+  "user_profile_table": "userprofiledata",
+  "user_transaction_history_table": "usertransactiondata",
+  "merchant_encryption_table": "merchantencryptiondata",
+  "merchant_profile_table": "merchantprofiledata",
+  "merchant_transaction_history_table": "merchanttransactiondata",
+  "charset": "utf8"
+}
